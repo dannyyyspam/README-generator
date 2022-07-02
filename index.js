@@ -1,5 +1,12 @@
 // TODO: Include packages needed for this application
+const { rejects } = require('assert');
+const fs = require('fs');
 const inquirer = require('inquirer');
+const { userInfo } = require('os');
+const { resolve } = require('path');
+const { connected } = require('process');
+const generateMarkdown = require('./utils/generateMarkdown.js');
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -51,22 +58,47 @@ const questions = [
     {
         type: 'input',
         name: 'tests',
-        message: 'Not sure what to do with this yet'
+        message: 'tests'
     },
     {
         type: 'input',
         name: 'questions',
-        message: 'Not sure what to do with this yet'
+        message: 'questions'
     },
 ];
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
+const writeToFile = data => {
+    return new Promise((resolve, reject) => {
+        // Make a README file and add to dist folder
+        fs.writeFile('./dist/README.md', data, err => {
+            // if there's an error, reject the Promise and send the error to .catch() method
+            if (err) {
+                reject (err);
+                // return out of the function here to make sure the Promise doesn't continue to execute the resolve() function
+                return;
+            }
+            // if everything went well, resolve the Promise and send the successful data to the .then() method
+            resolve({
+                ok: true,
+                message: 'Navigate to "dist" folder to see your README file!'
+            });
+        })
+    })
+}
 // TODO: Create a function to initialize app
-function init() {
+const init = () => {
     return inquirer.prompt(questions);
 }
 
 // Function call to initialize app
 init();
+.then(userInput => {
+    return generateMarkdown(userInput);
+})
+.then(readmeInfo => {
+    return writeToFile(readmeInfo);
+})
+.catch(err => {
+    console.log(err);
+})
