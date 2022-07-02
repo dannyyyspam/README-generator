@@ -1,5 +1,5 @@
 // TODO: Include packages needed for this application
-const fs = import('fs');
+import fs from 'fs'
 import inquirer from 'inquirer';
 const generateMarkdown = import('./utils/generateMarkdown.js');
 
