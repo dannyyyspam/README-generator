@@ -64,7 +64,7 @@ THEN I am taken to the corresponding section of the README
 ```
 
 ## Demonstration
-
+View Demo on YouTube: https://youtu.be/PWYLLjetm-M
 
 ## Credits
-Daniel A.
+Daniel A. Starter code: https://github.com/coding-boot-camp/potential-enigma

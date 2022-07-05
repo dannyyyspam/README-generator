@@ -1,5 +1,5 @@
 # demo
-  [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+  [![CC--0 license](https://img.shields.io/badge/License-CC--0-blue.svg)](https://creativecommons.org/licenses/by-nd/4.0)
   ## Table of Contents
   * [Description](#description)
   * [Installation](#installation)
@@ -20,7 +20,7 @@
   demo
 
   ## Licenses
-    This project is covered under the MIT license. To learn more about what this means, click the license button at the top.
+    This project is covered under the CC--0 license. To learn more about what this means, click the license button at the top.
 
   ## Contributing
   demo
